@@ -198,7 +198,7 @@ return [
         //Arrilot\Widgets\ServiceProvider::class,
         //Plank\Mediable\MediableServiceProvider::class,
         Cohensive\Embed\EmbedServiceProvider::class,
-
+        Laravel\Passport\PassportServiceProvider::class
     ],
 
     /*

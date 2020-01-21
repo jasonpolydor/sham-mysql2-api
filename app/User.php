@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Laravel\Passport\HasApiTokens;
 use App\Traits\HasBaseModel;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,7 +19,9 @@ use Yadahan\AuthenticationLog\AuthenticationLogable;
 
 class User extends Authenticatable
 {
-    use SoftDeletes, Notifiable, HasBaseModel, AuthenticationLogable, SearchableTrait, Filterable;
+    use SoftDeletes, Notifiable, HasBaseModel, 
+    AuthenticationLogable, SearchableTrait, Filterable,
+    HasApiTokens;
 
     protected $dispatchesEvents = [
         'saved' => UserAmended::class,

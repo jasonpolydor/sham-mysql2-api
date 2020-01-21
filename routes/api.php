@@ -29,4 +29,7 @@ Route::put('candidate/{id}', 'CandidatesController@update');
 //delete for candidate
 Route::delete('candidate/{id}', 'CandidatesController@destroy');
 */
-Route::apiResource('candidate', 'CandidatesController');
+
+Route::group(['middleware' => 'auth:api'],function() {
+    Route::apiResource('candidate', 'CandidatesController');
+});
